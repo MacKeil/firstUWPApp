@@ -35,12 +35,16 @@ namespace App2
             
         }
 
-        private async System.Threading.Tasks.Task Button_ClickAsync(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            sendData();
+        }
+        private async void sendData()
         {
             HttpClient hc = new HttpClient();
-            Uri uriA = new Uri(uri.Text);
+            Uri goTo = new Uri(uri.Text);
             HttpStringContent data = new HttpStringContent(parseAddSpaces(input.Text));
-            HttpResponseMessage msg = await hc.PostAsync(uriA, data);
+            HttpResponseMessage msg = await hc.PostAsync(goTo, data);
             forUser.Text = msg.ToString();
         }
         //didn't feel like putting this class elsewhere.  Much easier this way.
