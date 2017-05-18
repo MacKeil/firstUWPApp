@@ -45,7 +45,7 @@ namespace App2
             Uri goTo = new Uri(uri.Text);
             HttpStringContent data = new HttpStringContent(parseAddSpaces(input.Text));
             HttpResponseMessage msg = await hc.PostAsync(goTo, data);
-            forUser.Text = msg.ToString();
+            forUser.Text = msg.Content.ToString();
         }
         //didn't feel like putting this class elsewhere.  Much easier this way.
         private string parseAddSpaces(String toParse)
