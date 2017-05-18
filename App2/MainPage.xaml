@@ -1,0 +1,22 @@
+﻿<Page
+    x:Class="App2.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="myGrid">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="1"/>
+                <GradientStop Color="#FF5F8DDE" Offset="0.56"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <TextBlock x:Name="forUser" HorizontalAlignment="Center" Margin="90,50,0,0">This is the app.  Type your message, and get your response.</TextBlock>
+        <TextBox Name="uri" HorizontalAlignment="Left" Margin="310,130,0,0" PlaceholderText="URI for the connection." VerticalAlignment="Top" Height="50" TextWrapping="Wrap" Width="653"/>
+        <TextBox Name="input"  HorizontalAlignment="Left" Margin="310,224,0,0" TextWrapping="Wrap" PlaceholderText="Write your message here!" VerticalAlignment="Top" Height="50" Width="653"/>
+        <Button Content="Send" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="502,344,0,0" Click="Button_Click"/>
+    </Grid>
+</Page>
